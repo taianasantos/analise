@@ -20,6 +20,7 @@ Bancossh <- Bancossh %>%
   tibble::rownames_to_column(var = "n")
 
 Bancossh$n <- as.numeric(Bancossh$n)
+salarios <- Bancossh
 
 shinyUI(
   fluidPage(
