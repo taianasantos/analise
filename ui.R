@@ -11,7 +11,15 @@ library(knitr)
 #library(gganimate)
 
 colunas <- names(Bancossh)
+salarios <- Bancossh
 
+library(tibble)
+library(dplyr )
+
+Bancossh <- Bancossh %>% 
+  tibble::rownames_to_column(var = "n")
+
+Bancossh$n <- as.numeric(Bancossh$n)
 
 shinyUI(
   fluidPage(
